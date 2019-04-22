@@ -134,7 +134,7 @@ describe "ActiveRecord American Gladiator" do
       Order.create(items: [lights, lights, lights])
 
       # Changeable Start
-      most_popular_items = Item.joins(:orders).group(:name).order('COUNT(orders.id) DESC').limit(2)
+      most_popular_items = Item.joins(:order_items).group(:name).order('COUNT(order_items.id) DESC').limit(2)
       # Changeable Stop
 
       # Hints: http://apidock.com/rails/ActiveRecord/QueryMethods/select
